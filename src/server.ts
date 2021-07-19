@@ -53,6 +53,20 @@ app.get("/quest/accept", (req, res) => {
   });
 });
 
+app.get("/quest/start/impossible", (req, res) => {
+  res.json({
+    location: CAVE_EXTERIOR,
+    speech: {
+      speaker: MYSTERIOUS_ROBED_FIGURE,
+      text:
+        "fireball, dragon, excruciating pain",
+    },
+    options: {
+      restart: "/"
+    },
+  });
+});
+
 app.get("/quest/decline", (req, res) => {
   res.json({
     location: "Apocalypse",
